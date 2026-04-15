@@ -81,7 +81,7 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
       <div
         className="relative overflow-hidden"
-        style={{ height: '180px' }}
+        style={{ height: '120px' }}
         onClick={() => navigate(`/shop/${product.id}`)}
       >
         <ImageWithFallback
@@ -91,11 +91,7 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
         />
         {/* Badges */}
         <div className="absolute top-3 left-3 flex gap-2 flex-wrap">
-          {product.isBestSeller && (
-            <span className="px-2.5 py-1 rounded-full text-xs text-white" style={{ backgroundColor: '#2a4743' }}>
-              Best Seller
-            </span>
-          )}
+         
           {product.isNew && (
             <span className="px-2.5 py-1 rounded-full text-xs text-white" style={{ backgroundColor: '#8c7a62' }}>
               New
@@ -111,17 +107,14 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
       <div className="p-5">
        
         <h3
-          className="text-base mb-2 hover:text-[#8c7a62] transition-colors"
+          className="text-base text-xs mb-1 hover:text-[#8c7a62] transition-colors"
           style={{ color: '#2a4743', fontWeight: 500 }}
           onClick={() => navigate(`/shop/${product.id}`)}
         >
           {product.name}
         </h3>
-        <div className="flex items-center gap-8 mb-3">
-          <StarRating rating={product.rating} />
-          <span className="text-xs text-gray-400">({product.reviews})</span>
-        </div>
-        <div className="flex items-center gap-7 justify-between">
+       
+        <div className="flex items-center text-xs gap-7 justify-between">
           <div>
             <span className="text-base font-semibold" style={{ color: '#2a4743' }}>
   ${product.price.toLocaleString()}
@@ -157,7 +150,7 @@ export function HomePage() {
       {/* ─── HERO ─── */}
       <section
         className="relative flex items-center justify-center"
-        style={{ height: '92vh', minHeight: '600px' }}
+        style={{ height: '92vh', minHeight: '500px' }}
       >
         <div className="absolute inset-0">
           <ImageWithFallback
@@ -189,16 +182,16 @@ export function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/shop"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white text-sm tracking-wide transition-all hover:opacity-90 hover:shadow-lg hover:gap-3"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full text-white text-sm tracking-wide transition-all hover:opacity-90 hover:shadow-lg hover:gap-3"
                 style={{ backgroundColor: '#8c7a62' }}
               >
                 Shop Now <ArrowRight size={16} />
               </Link>
               <Link
                 to="/book-visit"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white text-sm tracking-wide border border-white/40 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
+                className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-white text-sm tracking-wide border border-white/40 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
               >
-                Book a Showroom Visit
+                Book a  Visit
               </Link>
             </div>
           </div>
@@ -216,8 +209,7 @@ export function HomePage() {
       <div style={{ backgroundColor: '#2a4743' }} className="text-white py-8">
         <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { value: '2,400+', label: 'Products' },
-            { value: '15,000+', label: 'Happy Clients' },
+          
             { value: '12', label: 'Years in Design' },
             { value: '5★', label: 'Average Rating' },
           ].map(stat => (

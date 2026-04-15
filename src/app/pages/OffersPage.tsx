@@ -70,7 +70,7 @@ export function OffersPage() {
   return (
     <div style={{ backgroundColor: '#f8f4f0', minHeight: '100vh' }}>
       {/* Hero Banner */}
-      <div className="relative overflow-hidden" style={{ minHeight: '420px' }}>
+      <div className="relative overflow-hidden" style={{ minHeight: '400px' }}>
         <ImageWithFallback
           src="https://images.unsplash.com/photo-1760611656148-063d3b9a8dbc?w=1400&q=80"
           alt="Seasonal Sale"
@@ -175,7 +175,7 @@ export function OffersPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {saleProducts.map(product => (
               <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-                <div className="relative overflow-hidden" style={{ height: '240px' }}>
+                <div className="relative overflow-hidden" style={{ height: '220px' }}>
                   <ImageWithFallback
                     src={product.image}
                     alt={product.name}

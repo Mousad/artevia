@@ -44,7 +44,7 @@ export function Navbar() {
         </div>
 
         {/* MAIN NAV */}
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
+        <div className="max-w-7xl mx-auto px-2 py-4 flex items-center justify-between relative">
 
           {/* 🛒 MOBILE CART (LEFT) */}
           <button

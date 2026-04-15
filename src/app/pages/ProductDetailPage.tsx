@@ -61,7 +61,7 @@ export function ProductDetailPage() {
           {/* ─── IMAGE GALLERY ─── */}
           <div className="space-y-4">
             {/* Main Image */}
-            <div className="relative rounded-3xl overflow-hidden bg-white" style={{ height: '520px' }}>
+            <div className="relative rounded-3xl overflow-hidden bg-white" style={{ height: '350px' }}>
               <ImageWithFallback
                 src={product.images[activeImg]}
                 alt={product.name}
@@ -70,27 +70,13 @@ export function ProductDetailPage() {
               {/* Nav arrows */}
               {product.images.length > 1 && (
                 <>
-                  <button
-                    onClick={() => setActiveImg(i => (i - 1 + product.images.length) % product.images.length)}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow hover:bg-white transition"
-                  >
-                    <ChevronLeft size={18} style={{ color: '#2a4743' }} />
-                  </button>
-                  <button
-                    onClick={() => setActiveImg(i => (i + 1) % product.images.length)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow hover:bg-white transition"
-                  >
-                    <ChevronRight size={18} style={{ color: '#2a4743' }} />
-                  </button>
+                 
+                  
                 </>
               )}
               {/* Badges */}
               <div className="absolute top-4 left-4 flex flex-col gap-2">
-                {product.isBestSeller && (
-                  <span className="px-3 py-1.5 rounded-full text-xs text-white" style={{ backgroundColor: '#2a4743' }}>
-                    Best Seller
-                  </span>
-                )}
+              
                 {product.isNew && (
                   <span className="px-3 py-1.5 rounded-full text-xs text-white" style={{ backgroundColor: '#8c7a62' }}>
                     New Arrival
@@ -103,15 +89,7 @@ export function ProductDetailPage() {
                 )}
               </div>
               {/* Wishlist */}
-              <button
-                onClick={() => setWishlisted(!wishlisted)}
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow hover:bg-white transition"
-              >
-                <Heart
-                  size={16}
-                  className={wishlisted ? 'fill-red-400 text-red-400' : 'text-gray-500'}
-                />
-              </button>
+             
             </div>
 
             {/* Thumbnails */}
@@ -253,15 +231,7 @@ export function ProductDetailPage() {
               >
                 <Calendar size={16} /> Request Visit
               </Link>
-              <a
-                href={`https://wa.me/12125550190?text=I'm interested in the ${encodeURIComponent(product.name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-5 py-4 rounded-xl text-sm bg-green-500 text-white hover:bg-green-600 transition"
-              >
-                <MessageCircle size={16} />
-                WhatsApp
-              </a>
+             
             </div>
 
             {/* Trust Badges */}
@@ -274,7 +244,6 @@ export function ProductDetailPage() {
                 <div key={label} className="bg-white rounded-xl p-3 text-center shadow-sm">
                   <Icon size={18} className="mx-auto mb-1.5" style={{ color: '#2a4743' }} />
                   <p className="text-xs font-medium" style={{ color: '#2a4743' }}>{label}</p>
-                  <p className="text-xs text-gray-400">{sub}</p>
                 </div>
               ))}
             </div>
